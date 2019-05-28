@@ -9,7 +9,7 @@ import { TaskService} from '../task.service';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks: Object= [];
+  tasks: Task[]= [];
   color ='orange';
   //how to get users? to new
   tyMsg: string;
@@ -29,8 +29,8 @@ export class TaskListComponent implements OnInit {
   }
   addnewTasksonchild(task: Task){
     console.log("in task-list.component ,adding task", task);
-    // this.tasks.push(task);
-    //pass data from a parent to a child, inputs receive data
+    this.tasks.push(task);
+    // pass data from a parent to a child, inputs receive data
     this.tyMsg ="thank you my child for the nre task";
   }
 }
