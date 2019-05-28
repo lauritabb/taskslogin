@@ -11,6 +11,9 @@ import { TemplatelogRegComponent } from './templatelog-reg/templatelog-reg.compo
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DetailsComponent } from './details/details.component';
 import { HeaderComponent } from './header/header.component';
+import { TaskNewComponent } from './task-new/task-new.component';
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HeaderComponent } from './header/header.component';
     TemplatelogRegComponent,
     WelcomeComponent,
     DetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    TaskNewComponent,
+    TaskListComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<div class="container">
+  <form (submit)='addTask($event, form)' #formNewTask="ngForm">
+    <div class="form-group">
+      <label for="Name">Name of Task</label>
+      <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" 
+      required
+      minlength="3"
+      [(ngModel)]="registerTask.name"
+      [ngModelOptions]="{updateOn: 'blur'}"
+      #nametask ="ngModel">
+      <p>{{registerTask.name}}</p>
+      <div *ngIf="!nametask.valid && (nametask.dirty || nametask.touched)" class="text-errors"> Error, input valid value</div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <input type="text" name="Description" class="form-control" id="exampleInputPassword1" 
+      required
+      minlength="3"
+      [(ngModel)]="registerTask.description"
+      [ngModelOptions]="{updateOn: 'blur'}"
+      #descriptiontask ="ngModel">
+      <div *ngIf="!descriptiontask.valid && (descriptiontask.dirty || descriptiontask.touched)" class="text-errors"> Error, input valid value</div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Assign to</label>
+      <input type="text" name="assigned" class="form-control"  
+      required
+      minlength="3"
+      [(ngModel)]="registerTask.assigned"
+      [ngModelOptions]="{updateOn: 'blur'}"
+      #assignedtask ="ngModel">
+      <div *ngIf="!assignedtask.valid && (assignedtask.dirty || assignedtask.touched)" class="text-errors"> Error, input valid value</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+</div>
