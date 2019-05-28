@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpService } from './http.service';
+import { TaskService } from './task.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; 
 
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

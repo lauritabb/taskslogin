@@ -4,6 +4,8 @@ import { TemplatelogRegComponent } from './templatelog-reg/templatelog-reg.compo
 import { WelcomeComponent } from '../app/welcome/welcome.component';
 import { DetailsComponent } from '../app/details/details.component';
 import { from } from 'rxjs';
+import { TaskNewComponent } from '../app/task-new/task-new.component';
+import { TaskListComponent } from '../app/task-list/task-list.component'
 
 const routes: Routes = [
   // routes to go
@@ -21,7 +23,8 @@ const routes: Routes = [
       },
       {
         path:'welcome', //localhost:4200/login/welcome
-        component:WelcomeComponent
+        // component:WelcomeComponent
+        component:TaskListComponent
       },
       {
         // one user id

@@ -1,3 +1,30 @@
-<p>
-  task-list works!
-</p>
+<app-welcome></app-welcome>
+<div class="container">
+        <header class="form text-center">
+            <h1>All Tasks</h1>
+            <hr>
+            <table class="table table-striped table-bordered table-sm">
+                <thead>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Completed</th>
+                    <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                        <tr *ngFor ="let task of tasks">
+                            <td scope="row">{{task.pk}}</td>
+                            <td scope="row">{{task.fields.title}}</td>
+                            <td scope="row" [ngClass]="{'done':task.completed}==True" *ngIf="task.completed==True">Done!</td>
+                            <td scope="row" [ngClass]="{'open':task.completed}==false" *ngIf="task.completed==false">Not Yet</td>
+                            <td scope="row">
+                                <a href=""> Show </a>
+                                <a href=""> Edit </a>
+                                <a href=""> Delete </a>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <hr>
+        </header>
+</div>
+<app-task-new (addnewTask)='addnewTasksonchild($event)' [parentData]='tyMsg'></app-task-new>

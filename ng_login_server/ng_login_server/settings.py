@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'corsheaders',
+    'apps.task',
     'apps.log_reg',
     'django.contrib.admin',
     'django.contrib.auth',
